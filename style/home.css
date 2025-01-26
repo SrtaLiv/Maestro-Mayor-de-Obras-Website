@@ -15,3 +15,14 @@ h1 {
 h2 {
     font-family: 'Roboto', sans-serif;
 }
+
+.image-container {
+    width: 172px;
+    height: auto;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
