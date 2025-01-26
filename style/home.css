@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.bebas-text {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.system-text {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+}
