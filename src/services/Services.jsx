@@ -1,10 +1,9 @@
-import Home from "./Home"
+import Home from "../home/Home"
 
 function Services() {
-    
+
     return (
         <>
-            <Home/>
         </>
     )
 }
