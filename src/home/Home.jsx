@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import './home.css'
+import { Link } from 'react-router';
+import { projects } from '../data/data';
+
 //click a la imagen y cambia el fondo
 // cambian las imagenes cada 3segundos.
 // Cambio automático del fondo cada 3 segundos
@@ -18,9 +21,10 @@ function Home() {
         const interval = setInterval(() => {
             currentIndex = (currentIndex + 1) % images.length;
             setBackground(images[currentIndex]);
-        }, 5000); 
+        }, 5000);
         return () => clearInterval(interval);
     }, []);
+
     return (
         <section className="home relative flex flex-col min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
             <div className="home absolute inset-0 bg-black bg-opacity-50 z-1"></div>
@@ -29,14 +33,21 @@ function Home() {
                 <h3 className="text-white text-2xl md:text-4xl font-roboto">MAESTRO MAYOR DE OBRAS.</h3>
             </div>
             <div className="images-home relative z-2 flex flex-row gap-2 w-full justify-end">
-                {images.map((img, index) => (
-                    <img
-                        key={index}
-                        src={img}
-                        alt=""
-                        className="border-2 border-solid border-white w-24 h-24 md:w-32 md:h-32 object-cover rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer"
-                        onClick={() => setBackground(img)}
-                    />
+                {projects.map((project, index) => (
+                    <Link
+                        key={projects.id}
+                        to={`/project/${project.id}`}
+                        className="flex flex-col"
+                    >
+                        <img
+                            key={index}
+                            src={project.images[0]}
+                            alt=""
+                            className="border-2 border-solid border-white w-24 h-24 md:w-32 md:h-32 object-cover rounded-2xl shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-xl cursor-pointer"
+                        //al hacer click va a project/:id
+                        />
+                    </Link>
+
                 ))}
             </div>
         </section>
