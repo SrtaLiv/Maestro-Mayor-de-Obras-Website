@@ -1,5 +1,50 @@
-* {
-    margin: 0;
-    padding: 0;
+/* **************************************** */
+/*               HOME SECTION               */
+/* **************************************** */
+
+.bebas-text {
+    font-family: 'Bebas Neue', sans-serif;
 }
 
+.system-text {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.home {
+    position: relative; 
+    background-image: url(../images/home1.png);
+    background-size: cover;
+    background-position: center;
+    padding-left: 6rem;
+    padding-bottom: 20px;
+    transition: background-image 0.5s ease-in-out; 
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1; 
+}
+
+.images-home{
+    padding-right: 2rem;
+}
+
+@media screen and (width <= 800px) {
+    .home {
+    padding-left: 2rem;
+    }
+}
