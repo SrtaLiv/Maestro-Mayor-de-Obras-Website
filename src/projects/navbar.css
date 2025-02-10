@@ -1,9 +1,17 @@
+@import "tailwindcss";
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+
 .nav-text {
     font-size: 2.5rem;
     color: white;
+    padding: 0.5em 1em 0 1em;
 }
 
 .nav-logo {
     /* padding: 1em 1em 1em 2em; */
-    padding: 0;
+    padding: 1em 3em;
 }
