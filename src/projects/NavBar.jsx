@@ -10,11 +10,10 @@ function NavBar() {
                     <h1 className="nav-text">PROYECTOS</h1>
                     <h1 className="nav-text">SERVICIOS</h1>
                     <h1 className="nav-text">CONTACTOS</h1>
-
                 </div>
 
             </div>
-            
+
         </>
     );
 }
