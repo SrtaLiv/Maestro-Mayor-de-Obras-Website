@@ -6,12 +6,12 @@
 
 
 .nav-text {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: white;
-    padding: 0.5em 1em 0 1em;
+    padding: 0.3em 0.7em 0 0.7em;
 }
 
 .nav-logo {
     /* padding: 1em 1em 1em 2em; */
-    padding: 1em 3em;
+    padding: 0.6em 3em;
 }
