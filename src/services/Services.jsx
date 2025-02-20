@@ -4,8 +4,11 @@ import { Building2, CircleDollarSign, HardHat, Ruler, FocusIcon as Foundation } 
 
 function Services() {
     return (
-        <section className="container flex justify-center flex-col h-screen mx-auto">
-            <h1 className="text-black text-7xl md:text-6xl font-bebas mb-8">Servicios</h1>
+        <section className="px-12 md:px-24 sm:px-4 min-h-screen flex justify-center flex-col py-20 sm:py-16">
+            <div className="">
+                <h2 className="text-black  text-5xl md:text-6xl sm:text-5xl font-inter mb-8 font-semibold">Servicios</h2>
+                <p className="mb-3.5">Estos son nuestros servicios mas solicitados. Queremos brindarte nuestro mejor experiencia personalizado, comoda y facil puedes puedes chequear entre estos o consultarnos por WhatsApp para asesorarte.</p>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
                     {

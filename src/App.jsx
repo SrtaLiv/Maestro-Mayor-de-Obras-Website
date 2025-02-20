@@ -2,8 +2,9 @@ import { useState } from 'react'
 import './index.css'
 import NavBar from './projects/navbar'
 import Home from './home/Home'
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
 import Services from './services/Services'
+// import { FAQ } from './services/AskQuestions'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,7 +13,7 @@ function App() {
       <NavBar />
       <Home />
       <Services/>
-      <Button>Click me</Button>
+      {/* <FAQ/> */}
     </>
   )
 }
