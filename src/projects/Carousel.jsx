@@ -1,5 +1,4 @@
 import * as React from "react"
-import Autoplay from "embla-carousel-autoplay"
 
 import { Card, CardContent } from "@/components/ui/card"
 import {
@@ -11,10 +10,6 @@ import {
 } from "@/components/ui/carousel"
 
 export function CarouselPlugin() {
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  )
-
   return (
     <Carousel
       plugins={[plugin.current]}
@@ -25,9 +20,9 @@ export function CarouselPlugin() {
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index}>
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
+            <div className="p-1 flex items-center ">
+              <Card className="flex flex-col items-center justify-center h-full">
+                <CardContent className="flex items-center justify-center aspect-square p-6">
                   <span className="text-4xl font-semibold">{index + 1}</span>
                 </CardContent>
               </Card>
