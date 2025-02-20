@@ -43,9 +43,20 @@
   }
 }
 
- .border-finito{
-    border: 0.2px solid #FFFFFF;
-    box-sizing: border-box;
-    border-style: solid;
-    border-color: #e5e7eb;
-} 
+.border-finito{
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde blanco con opacidad */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombras sutiles */
+  border-radius: 8px; /* Bordes más suaves */
+}
+
+.btn-service{
+  background-color: #ff7b00; /* Un naranja llamativo */
+  color: black;
+  border-radius: 5px;
+  padding: 10px 15px;
+  transition: background 0.3s;
+}
+
+.btn-service:hover{
+  background-color: #ff9f44; /* Un tono más claro al pasar el mouse */
+}
