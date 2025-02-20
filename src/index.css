@@ -1,7 +1,62 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+}
+
+@theme inline {
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+.border-finito{
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Borde blanco con opacidad */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Sombras sutiles */
+  border-radius: 8px; /* Bordes más suaves */
+}
+
+.btn-service{
+  background-color: #ff7b00; /* Un naranja llamativo */
+  color: black;
+  border-radius: 5px;
+  padding: 10px 15px;
+  transition: background 0.3s;
+}
+
+.btn-service:hover{
+  background-color: #ff9f44; /* Un tono más claro al pasar el mouse */
 }
