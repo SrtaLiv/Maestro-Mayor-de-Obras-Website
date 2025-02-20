@@ -1,40 +1,47 @@
 "use client"
 
 import { useState } from "react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@radix-ui/react-accordion"
 
 // Sample FAQ data
 const faqData = [
   {
-    question: "What is shadcn/ui?",
+    question: "¿Qué hace un Maestro Mayor de Obras?",
     answer:
-      "shadcn/ui is a collection of re-usable components built using Radix UI and Tailwind CSS. It's not a component library, but a collection of re-usable components that you can copy and paste into your apps.",
+      "Un Maestro Mayor de Obras es un profesional especializado en la planificación, dirección y ejecución de proyectos de construcción, asegurando que se cumplan las normativas y estándares de calidad.",
   },
   {
-    question: "Is it free to use?",
-    answer: "Yes, shadcn/ui is free and open-source. You can use it in your personal and commercial projects.",
-  },
-  {
-    question: "Can I use it with Next.js?",
-    answer: "shadcn/ui works great with Next.js and other React-based frameworks.",
-  },
-  {
-    question: "How do I install shadcn/ui?",
+    question: "¿Cuáles son las responsabilidades principales?",
     answer:
-      "You can install shadcn/ui components using the CLI. Run 'npx shadcn@latest init' in your project directory to get started.",
+      "Incluyen la elaboración de planos, dirección de obras, supervisión de trabajadores, cálculo de materiales y coordinación con arquitectos e ingenieros.",
   },
   {
-    question: "Is shadcn/ui responsive?",
+    question: "¿Pueden diseñar y firmar planos?",
     answer:
-      "Yes, the components are designed to be responsive out of the box. However, you may need to adjust layouts for specific use cases.",
+      "Sí, un Maestro Mayor de Obras puede diseñar y firmar planos para construcciones de pequeña y mediana escala, siempre dentro del marco legal vigente.",
   },
-]
+  {
+    question: "¿Cuál es la diferencia entre un Maestro Mayor de Obras y un Arquitecto?",
+    answer:
+      "El Maestro Mayor de Obras está más enfocado en la ejecución y supervisión técnica de la obra, mientras que el Arquitecto se centra en el diseño y planificación urbanística.",
+  },
+  {
+    question: "¿Puede encargarse de presupuestos y cálculos de materiales?",
+    answer:
+      "Sí, uno de los roles fundamentales es la elaboración de presupuestos detallados y el cálculo preciso de materiales según las necesidades del proyecto.",
+  },
+  {
+    question: "¿Es necesario contratar a un Maestro Mayor de Obras para una construcción?",
+    answer:
+      "Depende del tipo de obra. Para construcciones pequeñas, reformas y ampliaciones, puede ser suficiente. En proyectos más complejos, se requiere también la intervención de un arquitecto o ingeniero.",
+  },
+];
+
 
 export function FAQ() {
   const [searchTerm, setSearchTerm] = useState("")
 
-  // Filter FAQ items based on the search term
   const filteredFAQs = faqData.filter(
     (item) =>
       item.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -42,9 +49,9 @@ export function FAQ() {
   )
 
   return (
-    <Card className="w-full max-w-2xl mx-auto">
+    <Card className="border-finito mt-24 w-full md:max-w-screen max-w-3xl mx-auto bg-[#0e0e10]">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold">Frequently Asked Questions</CardTitle>
+        <CardTitle className="text-2xl font-bold">Preguntas Frecuentes</CardTitle>
       </CardHeader>
       <CardContent>
         <Accordion type="single" collapsible className="w-full">
