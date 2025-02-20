@@ -5,7 +5,7 @@ function NavBar() {
     return (
         <>
             <div className="h-16 fixed top-0 w-full z-50 flex justify-between content-center bg-black  " >
-                <img className="nav-logo" src="/src/assets/images/LOGO.png" />
+                <img className="nav-logo" src="/public/images/LOGO.png" />
                 <div className="flex  content-center hidden md:flex">
                     <h1 className="nav-text">INICIO</h1>
                     <h1 className="nav-text">PROYECTOS</h1>
