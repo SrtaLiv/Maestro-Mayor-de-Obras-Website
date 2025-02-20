@@ -57,7 +57,7 @@ export function FAQ() {
         <Accordion type="single" collapsible className="w-full">
           {filteredFAQs.map((item, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger>{item.question}</AccordionTrigger>
+              <AccordionTrigger className="cursor-pointer">{item.question}</AccordionTrigger>
               <AccordionContent>{item.answer}</AccordionContent>
             </AccordionItem>
           ))}

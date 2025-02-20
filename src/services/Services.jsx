@@ -16,7 +16,7 @@ function Services() {
                 {[
                     {
                         title: "Asesoramiento Técnico",
-                        description: "High-quality interior finishing work with attention to detail",
+                        description: "Brindar soporte y recomendaciones a los clientes y otros profesionales sobre aspectos técnicos del proyecto.",
                         icon: Ruler,
                     },
                     {
@@ -35,14 +35,17 @@ function Services() {
                         icon: Building2,
                     },
                 ].map((service) => (
-                    <Card backgroundColor="[#1a1a1a]"  className="border-finito border-[1px] h-full w-full px-7 group hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-lg">
+                    <Card backgroundColor="[#1a1a1a]" className="border-finito border-[1px] h-full w-full px-7 group hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-lg">
                         <CardContent className="pt-6">
                             <div className="flex justify-center mb-6">
                                 <service.icon className="w-16 h-16 text-orange-400" />
                             </div>
                             <h3 className="text-white text-xl font-semibold mb-1">{service.title}</h3>
                             <p className="text-gray-300 text-muted-foreground mb-6">{service.description}</p>
-                            <Button className="btn-service bg-orange-400">Más informacion</Button>
+                            <a href="https://api.whatsapp.com/send?phone=542284582635">
+                                <Button className="cursor-pointer btn-service bg-orange-400">Más informacion
+                                </Button>
+                            </a>
                         </CardContent>
                     </Card>
                 ))}
