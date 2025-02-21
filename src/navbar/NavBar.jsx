@@ -12,7 +12,6 @@ function NavBar() {
 
     return (
         <>
-<<<<<<< HEAD
             {/* <ul className="h-16 fixed top-0 w-full z-50 flex justify-between content-center bg-black  " >
                 <li>
                     <img className="nav-logo" src="/src/assets/images/LOGO.png" />
@@ -27,16 +26,6 @@ function NavBar() {
                         </li>
                     </ul>
                 </li>
-=======
-            <div className="h-16 fixed top-0 w-full z-50 flex justify-between content-center bg-black  " >
-                <img className="nav-logo" src="/public/images/LOGO.png" />
-                <div className="flex  content-center hidden md:flex">
-                    <h1 className="nav-text">INICIO</h1>
-                    <h1 className="nav-text">PROYECTOS</h1>
-                    <h1 className="nav-text">SERVICIOS</h1>
-                    <h1 className="nav-text">CONTACTOS</h1>
-                </div>
->>>>>>> e8f738debe4f783a81fdf38f7044993e6379359e
 
                 <li>
                     <div className="flex md:hidden ">
@@ -80,7 +69,7 @@ function NavBar() {
                 <div className={`absolute top-16 left-0 w-full bg-black p-4 flex flex-col divide-y divide-white space-y-4 transition-all duration-300 ${isOpen ? "block" : "hidden"} md:hidden`}>
                     <a> <h1 className="nav-text ">INICIO</h1> </a>
                     <h1 className="nav-text ">PROYECTOS</h1>
-                    <a href='./services'> <h1 className="nav-text ">SERVICIOS</h1> </a>
+                    <a href='#'> <h1 className="nav-text ">SERVICIOS</h1> </a>
                     <h1 className="nav-text ">CONTACTOS</h1>
                 </div>
 
