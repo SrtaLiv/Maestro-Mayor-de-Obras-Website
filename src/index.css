@@ -50,7 +50,7 @@
 }
 
 .btn-service{
-  background-color: #ff7b00; /* Un naranja llamativo */
+  background-color: #ff7b00; 
   color: black;
   border-radius: 5px;
   padding: 10px 15px;
@@ -58,5 +58,5 @@
 }
 
 .btn-service:hover{
-  background-color: #ff9f44; /* Un tono más claro al pasar el mouse */
+  background-color: #ff9f44; 
 }
