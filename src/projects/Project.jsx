@@ -14,7 +14,7 @@ import {
 function Project() {
 
     return (
-        <section className="px-4 md:px-24 bg-[#0e0e10] min-h-screen flex justify-center flex-col py-20 sm:py-16">
+        <section id='proyectos' className="px-4 md:px-24 bg-[#0e0e10] min-h-screen flex justify-center flex-col py-20 sm:py-16">
             <div className="">
                 <h2 className="text-white text-5xl md:text-6xl sm:text-5xl font-inter mb-8 font-semibold">Proyectos</h2>
             </div>
