@@ -26,7 +26,7 @@ function Home() {
     }, []);
 
     return (
-        <section className="px-4 home relative flex flex-col min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
+        <section className="px-4 home relative flex flex-col md:min-h-screen h-[95vh] bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
             <div className="home absolute inset-0 bg-black bg-opacity-50 z-1"></div>
             <div className="relative z-2 flex-1 flex flex-col justify-center items-start">
                 <h1 className="text-white text-7xl md:text-9xl font-bebas">Planos Y<br />Proyectos</h1>

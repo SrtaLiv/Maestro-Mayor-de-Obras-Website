@@ -3,6 +3,7 @@ import NavBar from './navbar/NavBar'
 import Home from './home/Home'
 import Services from './services/Services'
 import Project from './projects/Project'
+import Footer from './footer/Footer'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Home />
       <Services/>
       <Project/>
+      <Footer/>
     </>
   )
 }
