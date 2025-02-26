@@ -3,15 +3,15 @@
 import * as React from "react"
 import { Button } from "@/components/ui/button"
 
-export default function HamburgerMenu() {
-  const [isOpen, setIsOpen] = React.useState(false)
+export default function HamburgerMenu({isOpen}) {
+  /* const [isOpen, setIsOpen] = React.useState(false) */
 
   return (
     <Button
       variant="ghost"
       size="icon"
       aria-label={isOpen ? "Close menu" : "Open menu"}
-      onClick={() => setIsOpen(!isOpen)}
+      /* onClick={() => setIsOpen(!isOpen)} */
       className="relative h-10 w-10 p-2"
     >
       <div className="absolute left-1/2 top-1/2 w-6 -translate-x-1/2 -translate-y-1/2">

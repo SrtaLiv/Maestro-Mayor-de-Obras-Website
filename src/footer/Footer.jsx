@@ -1,7 +1,7 @@
 
 function Footer() {
     return (
-        <footer className="flex flex-col flex-wrap justify-between md:flex-row lg:flex-row px-4 py-12 sm:py-16 md:px-24 bg-black">
+        <footer id="footer" className="flex flex-col flex-wrap justify-between md:flex-row lg:flex-row px-4 py-12 sm:py-16 md:px-24 bg-black">
             <div className="mb-8 mr-4 flex flex-col">
                 <img className="h-24 w-48" src="images/LOGO.png" alt="Marcelo Todesco Logo" />
             </div>

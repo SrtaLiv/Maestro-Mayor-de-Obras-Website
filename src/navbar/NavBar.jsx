@@ -10,6 +10,10 @@ function NavBar() {
         setIsOpen((open) => !open)
     }
 
+    const closeMenu = () => {
+        setIsOpen(false);
+    }
+
     return (
         <>
             {/* <ul className="h-16 fixed top-0 w-full z-50 flex justify-between content-center bg-black  " >
@@ -43,21 +47,28 @@ function NavBar() {
                 {/* Menu pantallas grandes */}
                 {/* <div className={`menuItems ${isOpen ? "is-open" : ""}`} > */}
                 <div className="hidden content-center md:flex ">
-                    <a>
+                    <a href='#'>
                         <h1 className="nav-text">INICIO</h1>
                     </a>
+
                     <a href="#proyectos">
                         <h1 className="nav-text">PROYECTOS</h1>
                     </a>
-                    <h1 className="nav-text">SERVICIOS</h1>
-                    <h1 className="nav-text">CONTACTOS</h1>
+
+                    <a href='#services'>
+                        <h1 className="nav-text">SERVICIOS</h1>
+                    </a>
+
+                    <a href="#footer">
+                        <h1 className="nav-text">CONTACTOS</h1>
+                    </a>
                 </div>
                 {/* </div> */}
 
                 {/* burger button */}
                 {/* <div className="flex md:hidden "> */}
                 <div className="md:hidden pr-8 pt-2" onClick={toggleMenu}>
-                    <HamburgerMenu />
+                    <HamburgerMenu isOpen={isOpen} />
                 </div>
                 {/* </div> */}
 
@@ -71,15 +82,20 @@ function NavBar() {
                 </div> */}
 
                 <div className={`absolute top-16 left-0 w-full bg-black p-4 flex flex-col divide-y divide-white space-y-4 transition-all duration-300 ${isOpen ? "block" : "hidden"} md:hidden h-screen`}>
-                    <a> <h1 className="nav-text ">INICIO</h1> </a>
-                    <a href="#">
-                        <h1 className="nav-text ">PROYECTOS</h1>
+                    <a href='#'> 
+                        <h1 className="nav-text " onClick={closeMenu} >INICIO</h1> 
                     </a>
-                    <a href='#'>
-                        <h1 className="nav-text ">SERVICIOS</h1>
+
+                    <a href="#proyectos">
+                        <h1 className="nav-text " onClick={closeMenu} >PROYECTOS</h1>
                     </a>
-                    <a href="#">
-                        <h1 className="nav-text ">CONTACTOS</h1>
+
+                    <a href='#services'>
+                        <h1 className="nav-text " onClick={closeMenu} >SERVICIOS</h1>
+                    </a>
+
+                    <a href="#footer">
+                        <h1 className="nav-text " onClick={closeMenu} >CONTACTOS</h1>
                     </a>
                 </div>
 
