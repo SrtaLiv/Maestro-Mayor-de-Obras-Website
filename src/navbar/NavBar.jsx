@@ -51,12 +51,12 @@ function NavBar() {
                         <h1 className="nav-text">INICIO</h1>
                     </a>
 
-                    <a href="#proyectos">
-                        <h1 className="nav-text">PROYECTOS</h1>
-                    </a>
-
                     <a href='#services'>
                         <h1 className="nav-text">SERVICIOS</h1>
+                    </a>
+
+                    <a href="#proyectos">
+                        <h1 className="nav-text">PROYECTOS</h1>
                     </a>
 
                     <a href="#footer">
@@ -86,12 +86,12 @@ function NavBar() {
                         <h1 className="nav-text " onClick={closeMenu} >INICIO</h1> 
                     </a>
 
-                    <a href="#proyectos">
-                        <h1 className="nav-text " onClick={closeMenu} >PROYECTOS</h1>
-                    </a>
-
                     <a href='#services'>
                         <h1 className="nav-text " onClick={closeMenu} >SERVICIOS</h1>
+                    </a>
+
+                    <a href="#proyectos">
+                        <h1 className="nav-text " onClick={closeMenu} >PROYECTOS</h1>
                     </a>
 
                     <a href="#footer">
