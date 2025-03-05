@@ -24,12 +24,18 @@ function Project() {
                         {projects.map((project, index) => (
                             <CarouselItem key={index} className="pl-1">
                                 <div className="p-1">
-                                    <Card className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh]">
-                                        <CardContent className="flex flex-col items-start justify-center p-6 md:p-12 lg:p-16">
-
-                                            <h3 className="text-2xl text-black font-semibold mb-2">{project.title}</h3>
-                                            <p className="text-gray-300">{project.shortDescription}</p>
-                                            <Link key={index} to={`/proyecto/${project.id}`}   className="cursor-pointer btn-service bg-orange-400 text-white font-semibold py-2 px-4 rounded-lg mt-4 flex justify-center items-center hover:bg-orange-500 transition-all duration-300">Ver más</Link>
+                                    <Card 
+                                        className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] relative overflow-hidden"
+                                        style={{
+                                            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${project.images[0]})`,
+                                            backgroundSize: 'cover',
+                                            backgroundPosition: 'center'
+                                        }}
+                                    >
+                                        <CardContent className="flex flex-col items-start justify-center p-6 md:p-12 lg:p-16 relative z-10">
+                                            <h3 className="text-2xl text-white font-semibold mb-2">{project.title}</h3>
+                                            <p className="text-gray-200">{project.shortDescription}</p>
+                                            <Link key={index} to={`/proyecto/${project.id}`} className="cursor-pointer btn-service bg-orange-400 text-white font-semibold py-2 px-4 rounded-lg mt-4 flex justify-center items-center hover:bg-orange-500 transition-all duration-300">Ver más</Link>
                                         </CardContent>
                                     </Card>
                                 </div>

@@ -42,7 +42,7 @@ function NavBar() {
 
             <div className="h-16 fixed top-0 w-full z-50 flex justify-between content-center bg-black  " >
                 {/* Logo */}
-                <img className="nav-logo" src="/src/assets/images/LOGO.png" />
+                <img className="nav-logo" src="images/LOGO.png" />
 
                 {/* Menu pantallas grandes */}
                 {/* <div className={`menuItems ${isOpen ? "is-open" : ""}`} > */}
