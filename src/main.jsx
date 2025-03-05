@@ -8,8 +8,9 @@ import NavBar from './navbar/NavBar.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <NavBar />
+    
     <BrowserRouter>
+      <NavBar />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/proyecto/:id" element={<SingleProject />} />
