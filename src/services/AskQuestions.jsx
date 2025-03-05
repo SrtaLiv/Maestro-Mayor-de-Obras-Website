@@ -49,9 +49,9 @@ export function FAQ() {
   )
 
   return (
-    <Card className="mt-24 w-full md:max-w-screen h-80 max-w-3xl mx-auto bg-[#0e0e10]">
+    <Card className="mt-24 w-full md:max-w-screen max-w-3xl mx-auto bg-[#0e0e10]">
       <CardHeader>
-        <CardTitle className="text-2xl font-bold">Preguntas Frecuentes</CardTitle>
+        <CardTitle className="md:text-4xl font-bold">Preguntas Frecuentes</CardTitle>
       </CardHeader>
       <CardContent>
         <Accordion type="single" collapsible className="w-full">

@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Building2, CircleDollarSign, HardHat, Ruler, FocusIcon as Foundation } from "lucide-react";
-import { FAQ } from "./AskQuestions";
 
 // Saber mas te redirige a wpp
 
@@ -50,7 +49,6 @@ function Services() {
                     </Card>
                 ))}
             </div>
-            <FAQ />
         </section>
     );
 }

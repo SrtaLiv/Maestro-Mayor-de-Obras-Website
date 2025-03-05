@@ -10,6 +10,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
+import { FAQ } from '../services/AskQuestions';
 
 function Project() {
 
@@ -24,7 +25,7 @@ function Project() {
                         {projects.map((project, index) => (
                             <CarouselItem key={index} className="pl-1">
                                 <div className="p-1">
-                                    <Card 
+                                    <Card
                                         className="w-full h-[50vh] md:h-[60vh] lg:h-[70vh] relative overflow-hidden"
                                         style={{
                                             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url(${project.images[0]})`,
@@ -47,6 +48,7 @@ function Project() {
                     <CarouselNext className="hidden md:flex absolute right-6 top-1/2 transform -translate-y-1/2 z-10" />
                 </Carousel>
             </div>
+            <FAQ />
         </section >
     );
 
