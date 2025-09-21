@@ -17,101 +17,89 @@ function NavBar() {
 
     return (
         <>
-            {/* <ul className="h-16 fixed top-0 w-full z-50 flex justify-between content-center bg-black  " >
-                <li>
-                    <img className="nav-logo" src="/src/assets/images/LOGO.png" />
-                </li>
-                <li>
-                    <ul>
-                        <li className="flex  content-center hidden md:flex ">
-                            <a> <h1 className="nav-text">INICIO</h1> </a>
-                            <a> <h1 className="nav-text">PROYECTOS</h1> </a>
-                            <a> <h1 className="nav-text">SERVICIOS</h1> </a>
-                            <a> <h1 className="nav-text">CONTACTOS</h1> </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <li>
-                    <div className="flex md:hidden ">
-                        <div className="flex items-center justify-center min[840px]:hidden pr-8">
-                            <HamburgerMenu />
-                        </div>
-                    </div>
-                </li>
-            </ul> */}
-
-            <div className="h-16 fixed top-0 w-full z-50 flex justify-between content-center bg-black  " >
+            <nav className="h-16 px-6 md:px-24 fixed top-0 w-full z-50 flex justify-between items-center bg-black shadow-lg border-b border-gray-800" >
                 {/* Logo */}
-                {/* <Link to="/" ><img id="nav-logo" src="/images/LOGO.png" /></Link> */}
-                <a href="/" ><img id="nav-logo" src="/images/LOGO.png" /></a>
+                <div className="flex-shrink-0 hidden md:block">
+                    <a href="/" className="flex items-center h-14">
+                        <img id="nav-logo" src="/images/LOGO.png" alt="Logo" className=" h-full " />
+                    </a>
+                </div>
 
                 {/* Menu pantallas grandes */}
-                {/* <div className={`menuItems ${isOpen ? "is-open" : ""}`} > */}
-                <div className="hidden content-center md:flex ">
-                    <a href='#'>
+                <div className="hidden md:flex items-center gap-4 lg:space-x-2">
+                    <a href='#' className="nav-link">
                         <h1 className="nav-text">INICIO</h1>
                     </a>
 
-                    <a href='#services'>
+                    <a href='#services' className="nav-link">
                         <h1 className="nav-text">SERVICIOS</h1>
                     </a>
 
-                    <a href="#proyectos">
+                    <a href="#proyectos" className="nav-link">
                         <h1 className="nav-text">PROYECTOS</h1>
                     </a>
 
-                    <a href="#footer">
+                    <a href="#footer" className="nav-link">
                         <h1 className="nav-text">CONTACTOS</h1>
                     </a>
                 </div>
-                {/* </div> */}
-
-                {/* burger button */}
-                {/* <div className="flex md:hidden "> */}
-                <div className="md:hidden pr-8 pt-2" onClick={toggleMenu}>
-                    <HamburgerMenu isOpen={isOpen} />
-                </div>
-                {/* </div> */}
 
                 {/* Menu en mobile */}
-
-                {/* <div className={`absolute top-16 left-0 w-full bg-black p-4 flex flex-col space-y-4 transition-all duration-300 ${isOpen ? "block" : "hidden"} md:hidden`}>
-                    <h1 className="nav-text border-b-2 border-white border-t-1">INICIO</h1>
-                    <h1 className="nav-text border-b-2 border-white">PROYECTOS</h1>
-                    <h1 className="nav-text border-b-2 border-white">SERVICIOS</h1>
-                    <h1 className="nav-text border-b-2 border-white">CONTACTOS</h1>
-                </div> */}
-
-                <div className={`absolute top-16 left-0 w-full bg-black p-4 flex flex-col divide-y divide-white space-y-4 transition-all duration-300 ${isOpen ? "block" : "hidden"} md:hidden h-screen`}>
-                    <a href='#'> 
-                        <h1 className="nav-text-mobile " onClick={closeMenu} >INICIO</h1> 
+                <div className="flex-shrink-0 md:hidden">
+                    <a href="/" className="flex h-12 items-center">
+                        <img id="nav-logo" src="/images/LOGO.png" alt="Logo" className="" />
                     </a>
+                </div>
 
-                    <a href='#services'>
-                        <h1 className="nav-text-mobile " onClick={closeMenu} >SERVICIOS</h1>
-                    </a>
+                <div className="md:hidden pr-4 cursor-pointer" onClick={toggleMenu}>
+                    <HamburgerMenu isOpen={isOpen} />
+                </div>
 
-                    <a href="#proyectos">
-                        <h1 className="nav-text-mobile " onClick={closeMenu} >PROYECTOS</h1>
-                    </a>
+                <div className={`absolute top-16 left-0 w-full bg-black transition-all duration-500 ease-in-out ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none"} md:hidden h-screen overflow-y-auto`}>
+                    {/* Menu Items */}
+                    <div className="px-6 py-8 space-y-2">
+                        <a href='#' onClick={closeMenu} className="block">
+                            <h1 className="nav-text-mobile">INICIO</h1>
+                        </a>
 
-                    <a href="#footer">
-                        <h1 className="nav-text-mobile " onClick={closeMenu} >CONTACTOS</h1>
-                    </a>
+                        <a href='#services' onClick={closeMenu} className="block">
+                            <h1 className="nav-text-mobile">SERVICIOS</h1>
+                        </a>
 
-                    <div className='absolute bottom-25 left-0 w-full p-4 flex flex-col items-center ' >
-                        <a href="tel:+542284582635" > <h2 className="nav-text" >+54 9 2284582635</h2> </a>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Olavarria+General+Paz+3150" target="_blank"> 
-                            <h2 className="nav-text" >General Paz 3150</h2> 
+                        <a href="#proyectos" onClick={closeMenu} className="block">
+                            <h1 className="nav-text-mobile">PROYECTOS</h1>
                         </a>
                     </div>
-                    
+
+                    {/* Contact Section */}
+                    <div className='absolute bottom-8 left-4 right-4'>
+                        <div className='nav-contact-container'>
+                            <h3 className="nav-contact-title">CONTACTANOS</h3>
+
+                            <a href="tel:+542284582635" className="nav-contact-item block" onClick={closeMenu}>
+                                <span className="contact-icon">📞</span>
+                                <span className="nav-contact-text">+54 9 2284 582635</span>
+                            </a>
+
+                            <a href="https://www.google.com/maps/search/?api=1&query=Olavarria+General+Paz+3150"
+                                target="_blank"
+                                className="nav-contact-item block"
+                                onClick={closeMenu}>
+                                <span className="contact-icon">📍</span>
+                                <span className="nav-contact-text">General Paz 3150, Olavarría</span>
+                            </a>
+
+                            {/* Decorative element */}
+                            <div className="flex justify-center mt-4">
+                                <div className="w-16 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
 
 
-            </div>
+            </nav>
 
 
         </>

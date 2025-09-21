@@ -1,15 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Building2, CircleDollarSign, HardHat, Ruler, FocusIcon as Foundation } from "lucide-react";
+import SplitText from "../components/animations/SplitText";
 
 // Saber mas te redirige a wpp
 
 function Services() {
     return (
-        <section id="services" className="bg-[#0e0e10] px-4 md:px-24 sm:px-4 min-h-screen flex justify-center flex-col py-20 sm:py-16">
+        <section id="services" className="bg-[#0e0e10] px-6 gap-4 md:px-24 min-h-screen flex h-full flex-col py-20">
             <div className="">
-                <h2 className="text-white  text-5xl md:text-6xl sm:text-5xl font-inter mb-8 font-semibold">Servicios</h2>
-                <p className="text-white mb-3.5">Nuestros servicios más solicitados. Brindamos asesoría personalizada y eficiente. Consulta nuestras opciones o contáctanos por WhatsApp.</p>
+                <SplitText
+                    text="Servicios"
+                    className="h1 text-white  text-5xl md:text-7xl font-bebas"
+                    delay={100}
+                    duration={200}
+                    animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
+                    animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
+                    easing="easeOutCubic"
+                    threshold={0.2}
+                    rootMargin="-50px"
+                />
+
+                <p className="mt-4 md:text-lg text-base mb-8 md:mb-2 text-white">Nuestros servicios más solicitados. Brindamos asesoría personalizada y eficiente. Consulta nuestras opciones o contáctanos por WhatsApp.</p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
@@ -34,13 +46,14 @@ function Services() {
                         icon: Building2,
                     },
                 ].map((service) => (
-                    <Card backgroundColor="[#1a1a1a]" className="border-finito border-[1px] h-full w-full px-7 group hover:scale-105 transition-transform duration-300 ease-in-out hover:shadow-lg">
-                        <CardContent className="pt-6">
-                            <div className="flex justify-center mb-6">
+                    <Card backgroundColor="[#1a1a1a]" className="border-finito border-[1px] h-full w-full px-7 group hover:scale-102 transition-transform duration-300 ease-in-out hover:shadow-lg justify-between">
+                        <CardContent className="flex flex-col py-6 h-full justify-between">
+                            <div className="flex flex-col gap-3">
                                 <service.icon className="w-16 h-16 text-orange-400" />
+                                <h3 className="text-white text-xl font-semibold mb-1">{service.title}</h3>
+                                <p className="text-gray-300 text-muted-foreground mb-6">{service.description}</p>
                             </div>
-                            <h3 className="text-white text-xl font-semibold mb-1">{service.title}</h3>
-                            <p className="text-gray-300 text-muted-foreground mb-6">{service.description}</p>
+
                             <a href="https://api.whatsapp.com/send?phone=542284582635">
                                 <Button className="cursor-pointer btn-service bg-orange-400">Más informacion
                                 </Button>

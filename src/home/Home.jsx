@@ -32,10 +32,9 @@ function Home() {
     }, []);
 
     return (
-        <section className="px-4 home relative flex flex-col md:min-h-screen h-[95vh] bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
+        <section className="pl-6 md:pl-24 home relative flex flex-col md:min-h-screen h-[95vh] bg-cover bg-center" style={{ backgroundImage: `url(${background})` }}>
             <div className="home absolute inset-0 bg-black bg-opacity-50 z-1"></div>
             <div className="relative z-2 flex-1 flex flex-col justify-center items-start">
-
                 <SplitText
                     text="Planos Y"
                     className="h1 text-white text-7xl md:text-9xl font-bebas"
@@ -59,7 +58,7 @@ function Home() {
                         rootMargin="-50px"
                     />
                 )}
-                <h3 className="text-white text-2xl md:text-4xl font-roboto">MAESTRO MAYOR DE OBRAS.</h3>
+                <h3 className="text-white text-2xl md:text-4xl font-semibold">MAESTRO MAYOR DE OBRAS</h3>
             </div>
             <div className="images-home relative z-2 flex flex-row gap-2 w-full justify-end">
                 {projects.map((project, index) => (

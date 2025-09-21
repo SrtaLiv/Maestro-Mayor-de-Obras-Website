@@ -23,7 +23,6 @@ h2 {
     background-image: url(../images/home1.png);
     background-size: cover;
     background-position: center;
-    padding-left: 6rem;
     padding-bottom: 20px;
     transition: background-image 0.5s ease-in-out; 
 }
@@ -41,10 +40,4 @@ h2 {
 
 .images-home{
     padding-right: 2rem;
-}
-
-@media screen and (width <= 800px) {
-    .home {
-    padding-left: 2rem;
-    }
 }
