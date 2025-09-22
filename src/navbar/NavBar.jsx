@@ -12,7 +12,7 @@ function NavBar() {
     useEffect(() => {
         const handleScroll = () => {
             const scrollTop = window.scrollY;
-            setIsScrolled(scrollTop > 50); // Cambiar después de 50px de scroll
+            setIsScrolled(scrollTop > 1000); // Cambiar después de 50px de scroll
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -31,7 +31,7 @@ function NavBar() {
         <>
             <nav className={`h-16 px-6 md:px-24 fixed top-0 w-full z-50 flex justify-between items-center transition-all duration-300 ease-in-out ${
                 isScrolled 
-                    ? 'bg-black shadow-lg ' 
+                    ? 'bg-[#0e0e10]  ' 
                     : 'bg-transparent'
             }`}>
                 {/* Logo */}
