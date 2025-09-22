@@ -2,9 +2,9 @@
 
 import { useState } from "react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card"
 
-// Sample FAQ data
+// Datos de ejemplo
 const faqData = [
   {
     question: "¿Qué hace un Maestro Mayor de Obras?",
@@ -38,45 +38,44 @@ const faqData = [
   },
 ];
 
-
 export function FAQ() {
   const [searchTerm, setSearchTerm] = useState("")
 
   const filteredFAQs = faqData.filter(
     (item) =>
       item.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      item.answer.toLowerCase().includes(searchTerm.toLowerCase()),
+      item.answer.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
   return (
-    <section id="faq" className="bg-[#0e0e10] px-6 md:px-24 min-h-screen flex items-center justify-center py-20">
-      <Card className="w-full flex md:flex-row flex-col justify-between md:max-w-screen bg-[#0e0e10]">
-        <div className="">
-          <h1 className="text-white text-5xl md:text-6xl sm:text-5xl mb-6">Preguntas</h1>
+    <section id="faq" className="bg-[#0e0e10] px-6 md:px-24 py-20 flex justify-center">
+      <Card className="w-full flex flex-col md:flex-row items-start md:max-w-screen bg-[#0e0e10]">
+        {/* Título y descripción */}
+        <div className="mb-8 md:mb-0 md:pr-12 flex-1">
+          <h1 className="text-white text-5xl md:text-6xl mb-6">Preguntas</h1>
           <p className="text-gray-400">Aquí encontrarás respuestas a las preguntas más frecuentes.</p>
         </div>
-        <CardContent>
-          <div className="flex flex-col lg:flex-row gap-8">
-            <div className="flex-1">
-              <Accordion type="single" collapsible className="w-full space-y-1">
-                {filteredFAQs.map((item, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} className=" py-2">
-                    <AccordionTrigger className="cursor-pointer text-lg md:text-xl lg:text-2xl font-semibold text-white hover:text-orange-400 transition-colors duration-300 [&>svg]:w-6 [&>svg]:h-6 [&>svg]:text-orange-500 [&>svg]:hover:text-orange-400 py-6">
-                      {item.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-base md:text-lg text-gray-300 leading-relaxed pb-6 pt-2">
-                      {item.answer}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
-              </Accordion>
-              {filteredFAQs.length === 0 && <p className="text-center text-gray-500 mt-4">No matching questions found.</p>}
-            </div>
-          </div>
+
+        {/* Accordion */}
+        <CardContent className="flex-1 w-full">
+          <Accordion type="single" collapsible className="w-full">
+            {filteredFAQs.map((item, index) => (
+              <AccordionItem key={index} value={`item-${index}`} className="py-2">
+                <AccordionTrigger className="cursor-pointer text-lg md:text-xl lg:text-2xl font-semibold text-white hover:text-orange-400 transition-colors duration-300 py-4">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-base md:text-lg text-gray-300 leading-relaxed pt-2 pb-4">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+
+          {filteredFAQs.length === 0 && (
+            <p className="text-center text-gray-500 mt-4">No se encontraron preguntas coincidentes.</p>
+          )}
         </CardContent>
       </Card>
     </section>
-
   )
 }
-
