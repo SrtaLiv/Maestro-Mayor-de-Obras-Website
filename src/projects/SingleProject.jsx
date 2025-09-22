@@ -18,7 +18,7 @@ function SingleProject() {
       <img
         src={`/${project.images[0]}`}
         alt={project.title}
-        className="mt-4 rounded-lg w-full max-w-md"
+        className="mt-4  -lg w-full max-w-md"
       />
     </section>
   );

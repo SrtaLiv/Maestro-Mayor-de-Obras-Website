@@ -20,11 +20,9 @@ h2 {
 
 .home {
     position: relative; 
-    background-image: url(../images/home1.png);
     background-size: cover;
     background-position: center;
     padding-bottom: 20px;
-    transition: background-image 0.5s ease-in-out; 
 }
 
 .home::before {
@@ -38,6 +36,3 @@ h2 {
     z-index: 1; 
 }
 
-.images-home{
-    padding-right: 2rem;
-}
