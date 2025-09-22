@@ -9,21 +9,11 @@ function AllProjects() {
     const [selectedProjectType, setSelectedProjectType] = useState('todos');
     const [selectedService, setSelectedService] = useState('todos');
 
-    // Obtener tipos únicos de proyectos (basado en el título o podríamos agregar un campo type)
+    // Obtener tipos únicos de proyectos
     const projectTypes = useMemo(() => {
         const types = new Set();
         projects.forEach(project => {
-            // Determinar tipo basado en palabras clave en el título
-            const title = project.title.toLowerCase();
-            if (title.includes('casa') || title.includes('vivienda')) {
-                types.add('Residencial');
-            } else if (title.includes('galpon') || title.includes('galpón') || title.includes('industrial')) {
-                types.add('Industrial');
-            } else if (title.includes('comercio') || title.includes('local') || title.includes('negocio')) {
-                types.add('Comercial');
-            } else {
-                types.add('Otros');
-            }
+            types.add(project.type);
         });
         return Array.from(types);
     }, []);
@@ -37,20 +27,10 @@ function AllProjects() {
         return Array.from(services);
     }, []);
 
-    // Función para determinar el tipo de proyecto
-    const getProjectType = (project) => {
-        const title = project.title.toLowerCase();
-        if (title.includes('casa') || title.includes('vivienda')) return 'Residencial';
-        if (title.includes('galpon') || title.includes('galpón') || title.includes('industrial')) return 'Industrial';
-        if (title.includes('comercio') || title.includes('local') || title.includes('negocio')) return 'Comercial';
-        return 'Otros';
-    };
-
     // Filtrar proyectos
     const filteredProjects = useMemo(() => {
         return projects.filter(project => {
-            const projectType = getProjectType(project);
-            const matchesType = selectedProjectType === 'todos' || projectType === selectedProjectType;
+            const matchesType = selectedProjectType === 'todos' || project.type === selectedProjectType;
             const matchesService = selectedService === 'todos' || project.services.includes(selectedService);
             
             return matchesType && matchesService;
@@ -123,7 +103,7 @@ function AllProjects() {
                                     {/* Badge del tipo de proyecto */}
                                     <div className="absolute top-3 left-3">
                                         <span className="bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                                            {getProjectType(project)}
+                                            {project.type}
                                         </span>
                                     </div>
                                 </div>
