@@ -7,8 +7,8 @@ import SplitText from "../components/animations/SplitText";
 
 function Services() {
     return (
-        <section id="services" className="bg-[#0e0e10] px-6 gap-4 md:px-24 min-h-screen flex h-full flex-col py-20">
-            <div className="">
+        <section id="services" className="bg-[#0e0e10] px-6 gap-4 md:px-24 min-h-screen flex h-full flex-col py-20" data-speed="0.9">
+            <div className="" data-speed="0.8">
                 <SplitText
                     text="Servicios"
                     className="h1 text-white  text-5xl md:text-7xl font-bebas"

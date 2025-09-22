@@ -14,11 +14,11 @@ import {
 function Project() {
 // TO DO: cuando hacen hover hacer un aumento scale en la imagen pero sin aumentar el tamaño. solo adentro hacer como un mini zoom
     return (
-        <section id='proyectos' className="px-4 md:px-24 bg-[#0e0e10] min-h-screen flex justify-center flex-col py-20 sm:py-16">
-            <div className="">
+        <section id='proyectos' className="px-4 md:px-24 bg-[#0e0e10] min-h-screen flex justify-center flex-col py-20 sm:py-16" data-speed="0.95">
+            <div className="" data-speed="0.8">
                 <h1 className="text-white text-5xl md:text-6xl sm:text-5xl mb-6">Proyectos</h1>
             </div>
-            <div className="w-full relative">
+            <div className="w-full relative" data-speed="1.05">
                 <Carousel
                     className="w-full"
                     opts={{

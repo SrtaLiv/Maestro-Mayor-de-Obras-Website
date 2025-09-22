@@ -8,7 +8,7 @@ export const projects: Project[] = [
         shortDescription: 'Casa de Elon Musk.',
         longDescription: 'La casa mas dificil y costosa de hacer, fue hecha en 2020 con las ultimas tecnologias y diseños.',
         services: ['Asesoria', 'Diseños', 'Arquitectura'],
-        images: ['images/frentes.jpg',],
+        images: ['images/frentes.jpg','images/frentes.jpg','images/frentes.jpg','images/frentes.jpg','images/frentes.jpg','images/frentes.jpg',],
     },
     {
         id: '2',

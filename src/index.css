@@ -3,7 +3,17 @@
 @custom-variant dark (&:is(.dark *));
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto; /* Cambiado para que ScrollSmoother funcione mejor */
+}
+
+/* ScrollSmoother styles */
+#smooth-wrapper {
+  overflow: hidden;
+}
+
+#smooth-content {
+  overflow: visible;
+  width: 100%;
 }
 
 button {

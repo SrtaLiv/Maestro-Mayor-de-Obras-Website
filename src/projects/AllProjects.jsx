@@ -57,6 +57,12 @@ function AllProjects() {
         });
     }, [selectedProjectType, selectedService]);
 
+    // Limpiar filtros
+    const clearFilters = () => {
+        setSelectedProjectType('todos');
+        setSelectedService('todos');
+    };
+
     return (
         <section className="px-6 w-full uppercase  md:px-12 lg:px-24 bg-[#0e0e10] min-h-screen py-20">
             {/* Header */}
@@ -71,7 +77,7 @@ function AllProjects() {
                         <select
                             value={selectedProjectType}
                             onChange={(e) => setSelectedProjectType(e.target.value)}
-                            className="w-full bg-gray-800 border border-gray-700 text-white  -lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                            className="w-full bg-gray-800 border border-gray-700 text-white rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
                         >
                             <option value="todos">Todos los tipos</option>
                             {projectTypes.map(type => (
@@ -86,7 +92,7 @@ function AllProjects() {
                         <select
                             value={selectedService}
                             onChange={(e) => setSelectedService(e.target.value)}
-                            className="w-full bg-gray-800 border border-gray-700 text-white  -lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
+                            className="w-full bg-gray-800 border border-gray-700 text-white rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors"
                         >
                             <option value="todos">Todos los servicios</option>
                             {availableServices.map(service => (
@@ -116,7 +122,7 @@ function AllProjects() {
                                     
                                     {/* Badge del tipo de proyecto */}
                                     <div className="absolute top-3 left-3">
-                                        <span className="bg-orange-500 text-white px-2 py-1  -full text-xs font-semibold">
+                                        <span className="bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
                                             {getProjectType(project)}
                                         </span>
                                     </div>
@@ -161,7 +167,7 @@ function AllProjects() {
                     </p>
                     <Button
                         onClick={clearFilters}
-                        className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6  -lg transition-all duration-300"
+                        className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-lg transition-all duration-300"
                     >
                         Ver todos los proyectos
                     </Button>
