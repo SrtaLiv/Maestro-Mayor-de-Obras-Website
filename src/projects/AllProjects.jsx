@@ -87,12 +87,12 @@ function AllProjects() {
 
             {/* Grid de Proyectos */}
             {filteredProjects.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3 md:gap-6">
                     {filteredProjects.map((project) => (
                         <Link key={project.id} to={`/proyecto/${project.id}`} className="group">
                             <Card className="h-full    overflow-hidden cursor-pointer   ">
                                 {/* Imagen del proyecto */}
-                                <div className=" h-[55vh] md:h-[50vh] lg:h-[60vh] relative overflow-hidden">
+                                <div className="h-[32vh] sm:h-[42vh] md:h-[50vh] lg:h-[56vh] relative overflow-hidden">
                                     <div
                                         className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
                                         style={{
