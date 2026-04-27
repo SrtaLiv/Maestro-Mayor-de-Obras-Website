@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Card, CardContent } from "@/components/ui/card"
+import AnimatedContent from "../components/animations/AnimatedContent"
 
 // Datos de ejemplo
 const faqData = [
@@ -51,12 +52,15 @@ export function FAQ() {
     <section id="faq" className="bg-[#0e0e10] px-6 md:px-24 py-20 flex justify-center">
       <Card className="w-full flex flex-col md:flex-row items-start md:max-w-screen bg-[#0e0e10]">
         {/* Título y descripción */}
-        <div className="mb-8 md:mb-0 md:pr-12 flex-1">
-          <h1 className="text-white text-5xl md:text-6xl mb-6">Preguntas</h1>
-          <p className="text-gray-400">Aquí encontrarás respuestas a las preguntas más frecuentes.</p>
-        </div>
+        <AnimatedContent direction="horizontal" reverse={true} distance={60} threshold={0.1}>
+          <div className="mb-8 md:mb-0 md:pr-12 flex-1">
+            <h1 className="text-white text-5xl md:text-6xl mb-6">Preguntas</h1>
+            <p className="text-gray-400">Aquí encontrarás respuestas a las preguntas más frecuentes.</p>
+          </div>
+        </AnimatedContent>
 
         {/* Accordion */}
+        <AnimatedContent direction="horizontal" distance={60} threshold={0.1} delay={150}>
         <CardContent className="flex-1 w-full">
           <Accordion type="single" collapsible className="w-full">
             {filteredFAQs.map((item, index) => (
@@ -75,6 +79,7 @@ export function FAQ() {
             <p className="text-center text-gray-500 mt-4">No se encontraron preguntas coincidentes.</p>
           )}
         </CardContent>
+        </AnimatedContent>
       </Card>
     </section>
   )

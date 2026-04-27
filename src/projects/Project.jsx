@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { projects } from '../data/data';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card"
+import AnimatedContent from '../components/animations/AnimatedContent';
 import {
     Carousel,
     CarouselContent,
@@ -16,8 +17,11 @@ function Project() {
     return (
         <section id='proyectos' className="px-4 md:px-24 bg-[#0e0e10] min-h-screen flex justify-center flex-col py-20 sm:py-16" data-speed="0.95">
             <div className="" data-speed="0.8">
-                <h1 className="text-white text-5xl md:text-6xl sm:text-5xl mb-6">Proyectos</h1>
+                <AnimatedContent distance={40} threshold={0.1}>
+                    <h1 className="text-white text-5xl md:text-6xl sm:text-5xl mb-6">Proyectos</h1>
+                </AnimatedContent>
             </div>
+            <AnimatedContent distance={50} delay={200} threshold={0.1}>
             <div className="w-full relative" data-speed="1.05">
                 <Carousel
                     className="w-full"
@@ -92,6 +96,7 @@ function Project() {
                     </div>
                 </Carousel>
             </div>
+            </AnimatedContent>
         </section >
     );
 

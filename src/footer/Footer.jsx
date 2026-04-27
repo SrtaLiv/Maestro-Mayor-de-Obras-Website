@@ -19,7 +19,7 @@ function Footer() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
                     {/* Logo Section */}
                     <div className="flex flex-col items-start justify-between col-span-1 sm:col-span-2 lg:col-span-1">
-                        <h1 className="h1 text-white text-5xl sm:text-6xl md:text-7xl font-bebas">
+                        <h1 className="h1 text-white text-5xl mb-4 md:mb-0 sm:text-6xl md:text-7xl font-bebas">
                             TRABAJEMOS JUNTOS
                         </h1>
                         <div className="flex gap-4">

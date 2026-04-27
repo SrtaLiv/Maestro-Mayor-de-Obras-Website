@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Building2, CircleDollarSign, HardHat, Ruler, FocusIcon as Foundation, ArrowDownRight } from "lucide-react";
-import SplitText from "../components/animations/SplitText";
+import AnimatedContent from "../components/animations/AnimatedContent";
 
 // Saber mas te redirige a wpp
 
@@ -9,19 +9,13 @@ function Services() {
     return (
         <section id="services" className="z-200 bg-[#0e0e10] px-6 gap-4 md:px-24 min-h-screen flex h-full flex-col py-20" data-speed="0.9">
             <div className="" data-speed="0.8">
-                <SplitText
-                    text="Servicios"
-                    className="h1 text-white  text-5xl md:text-7xl font-bebas"
-                    delay={100}
-                    duration={200}
-                    animationFrom={{ opacity: 0, transform: 'translate3d(0,50px,0)' }}
-                    animationTo={{ opacity: 1, transform: 'translate3d(0,0,0)' }}
-                    easing="easeOutCubic"
-                    threshold={0.2}
-                    rootMargin="-50px"
-                />
+                <AnimatedContent direction="horizontal" reverse={true} distance={60} threshold={0.1}>
+                    <h1 className="h1 text-white text-5xl md:text-7xl font-bebas">Servicios</h1>
+                </AnimatedContent>
 
-                <p className="mt-4 md:text-lg text-base mb-8 md:mb-2 text-white">Nuestros servicios más solicitados. Brindamos asesoría personalizada y eficiente. Consulta nuestras opciones o contáctanos por WhatsApp.</p>
+                <AnimatedContent direction="horizontal" distance={60} threshold={0.1} delay={150}>
+                    <p className="mt-4 md:text-lg text-base mb-8 md:mb-2 text-white">Nuestros servicios más solicitados. Brindamos asesoría personalizada y eficiente. Consulta nuestras opciones o contáctanos por WhatsApp.</p>
+                </AnimatedContent>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
                 {[
@@ -50,8 +44,8 @@ function Services() {
                         icon: Building2,
                     },
                 ].map((service) => (
+                    <AnimatedContent key={service.id} distance={60} delay={service.id * 150} threshold={0.1}>
                     <Card
-                    key={service.id}
                     backgroundColor="[#1a1a1a]" className=" bg-black/30 h-full w-full px-8 group hover:scale-102 transition-transform duration-300 ease-in-out hover:shadow-lg justify-between">
                         <CardContent className="flex flex-col py-6 md:py-8 lg:py-10 h-full justify-between">
                             <div className="flex flex-col gap-3">
@@ -71,6 +65,7 @@ function Services() {
                           
                         </CardContent>
                     </Card>
+                    </AnimatedContent>
                 ))}
             </div>
         </section>

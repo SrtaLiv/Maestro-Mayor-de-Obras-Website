@@ -10,6 +10,8 @@ function SingleProject() {
     return <h2 className="text-white text-3xl">Proyecto no encontrado</h2>;
   }
 
+  const detailImages = id === '28' ? [] : project.images.slice(1);
+
   return (
     <>
       <section className=" py-12 bg-[#0e0e10] h-auto min-h-screen">
@@ -24,17 +26,7 @@ function SingleProject() {
             <p className="text-gray-300 mt-4 md:w-[40vw]">{project.longDescription}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
-                {
-                  project.images.map((imgSrc, index) => (
-                    <img
-                      key={index}
-                      src={imgSrc}
-                      alt={`${project.title} - Imagen ${index + 1}`}
-                      className="w-full h-64 object-cover shadow-lg  transition-transform duration-300"
-                      />
-                    ))}
-          </div>
+         
         </div>
       </section>
       <Footer />

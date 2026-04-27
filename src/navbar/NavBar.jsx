@@ -1,22 +1,34 @@
 import './navbar.css'
 import HamburgerMenu from "./hamburger-menu"
-import { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { FaWhatsapp } from 'react-icons/fa';
 
 function NavBar() {
 
     const [isOpen, setIsOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [hasPassedHero, setHasPassedHero] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(typeof window !== 'undefined' ? window.innerWidth >= 768 : true);
 
-    // Detectar scroll
     useEffect(() => {
-        const handleScroll = () => {
-            const scrollTop = window.scrollY;
-            setIsScrolled(scrollTop > 1000); // Cambiar después de 50px de scroll
+        const updateNavbarState = () => {
+            const isDesktopViewport = window.innerWidth >= 768;
+            setIsDesktop(isDesktopViewport);
+
+            const heroSection = document.querySelector('.home-panel');
+            const heroHeight = heroSection ? heroSection.clientHeight : window.innerHeight;
+            const threshold = Math.max(heroHeight - 64, 0);
+
+            setHasPassedHero(window.scrollY > threshold);
         };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+        updateNavbarState();
+        window.addEventListener('scroll', updateNavbarState, { passive: true });
+        window.addEventListener('resize', updateNavbarState);
+
+        return () => {
+            window.removeEventListener('scroll', updateNavbarState);
+            window.removeEventListener('resize', updateNavbarState);
+        };
     }, []);
 
     const toggleMenu = () => {
@@ -27,13 +39,11 @@ function NavBar() {
         setIsOpen(false);
     }
 
+    const shouldUseBlackBg = hasPassedHero || (!isDesktop && isOpen);
+
     return (
         <>
-            <nav className={`h-16 px-6 md:px-24 fixed top-0 w-full z-50 flex justify-between items-center transition-all duration-300 ease-in-out ${
-                isScrolled 
-                    ? 'bg-[#0e0e10]  ' 
-                    : 'bg-transparent'
-            }`}>
+            <nav className={`h-16 px-6 md:px-24 fixed top-0 w-full z-50 flex justify-between items-center transition-all duration-300 ease-in-out ${shouldUseBlackBg ? 'bg-black' : 'bg-transparent'}`}>
                 {/* Logo */}
                 <div className="flex-shrink-0 hidden md:block">
                     <a href="/" className="flex items-center h-14">
@@ -55,8 +65,14 @@ function NavBar() {
                         <h1 className="nav-text">PROYECTOS</h1>
                     </a>
 
-                    <a href="#footer" className="nav-link">
-                        <h1 className="nav-text">CONTACTO</h1>
+                    <a
+                        href="https://api.whatsapp.com/send?phone=542284582635"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-2 px-4 transition-all duration-300 uppercase text-sm"
+                    >
+                        <FaWhatsapp size={18} />
+                        Hablemos
                     </a>
                 </div>
 
@@ -84,6 +100,16 @@ function NavBar() {
 
                         <a href="#proyectos" onClick={closeMenu} className="block">
                             <h1 className="nav-text-mobile">PROYECTOS</h1>
+                        </a>
+                        <a
+                            href="https://api.whatsapp.com/send?phone=542284582635"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={closeMenu}
+                            className="flex items-center gap-2 bg-orange-500 text-white font-bold py-3 px-4 w-fit mt-2 uppercase text-base"
+                        >
+                            <FaWhatsapp size={22} />
+                            Hablemos
                         </a>
                     </div>
 
